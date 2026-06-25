@@ -5,7 +5,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Shopping Cart</name>
-	<description>A Shopping Cart Project in Java by Bitter Code</description>
+	<description>Dự án giỏ hàng trực tuyến bằng Java của Vu</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>

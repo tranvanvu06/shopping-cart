@@ -5,18 +5,17 @@ import jakarta.mail.MessagingException;
 public class MailMessage {
 	public static void registrationSuccess(String emailId, String name) {
 		String recipient = emailId;
-		String subject = "Registration Successfull";
+		String subject = "Đăng ký tài khoản thành công";
 		String htmlTextMessage = "" + "<html>" + "<body>"
-				+ "<h2 style='color:green;'>Welcome to Ellison Electronics</h2>" + "" + "Hi " + name + ","
-				+ "<br><br>Thanks for singing up with Ellison Electronics.<br>"
-				+ "We are glad that you choose us. We invite you to check out our latest collection of new electonics appliances."
-				+ "<br>We are providing upto 60% OFF on most of the electronic gadgets. So please visit our site and explore the collections."
-				+ "<br><br>Our Online electronics is growing in a larger amount these days and we are in high demand so we thanks all of you for "
-				+ "making us up to that level. We Deliver Product to your house with no extra delivery charges and we also have collection of most of the"
-				+ "branded items.<br><br>As a Welcome gift for our New Customers we are providing additional 10% OFF Upto 500 Rs for the first product purchase. "
-				+ "<br>To avail this offer you only have "
-				+ "to enter the promo code given below.<br><br><br> PROMO CODE: " + "ELLISON500<br><br><br>"
-				+ "Have a good day!<br>" + "" + "</body>" + "</html>";
+				+ "<h2 style='color:green;'>Chào mừng bạn đến với Van Vu Electronics Store</h2>" + "" + "Xin chào " + name + ","
+				+ "<br><br>Cảm ơn bạn đã đăng ký tài khoản tại Van Vu Electronics Store.<br>"
+				+ "Chúng tôi rất vui mừng vì bạn đã lựa chọn chúng tôi. Mời bạn ghé xem bộ sưu tập thiết bị điện tử mới nhất của cửa hàng."
+				+ "<br>Chúng tôi đang áp dụng chương trình giảm giá lên đến 60% cho hầu hết các thiết bị điện tử. Hãy truy cập trang web để khám phá ngay nhé."
+				+ "<br><br>Hệ thống mua sắm trực tuyến của chúng tôi đang ngày càng phát triển mạnh mẽ và nhận được sự quan tâm lớn từ khách hàng, "
+				+ "chúng tôi chân thành cảm ơn bạn đã đồng hành để đạt được vị thế này. Chúng tôi giao hàng tận nơi hoàn toàn MIỄN PHÍ giao hàng và sở hữu danh mục sản phẩm từ các thương hiệu hàng đầu.<br><br>"
+				+ "Như một món quà chào mừng khách hàng mới, chúng tôi tặng bạn ưu đãi giảm thêm 10% (Tối đa 500.000 VNĐ) cho đơn hàng đầu tiên. "
+				+ "<br>Để áp dụng ưu đãi này, bạn chỉ cần nhập mã giảm giá được cung cấp bên dưới khi thanh toán:<br><br><br> MÃ GIẢM GIÁ: " + "VANVU500<br><br><br>"
+				+ "Chúc bạn một ngày tốt lành!<br>" + "" + "</body>" + "</html>";
 		try {
 			JavaMailUtil.sendMail(recipient, subject, htmlTextMessage);
 		} catch (MessagingException e) {
@@ -27,17 +26,17 @@ public class MailMessage {
 
 	public static void transactionSuccess(String recipientEmail, String name, String transId, double transAmount) {
 		String recipient = recipientEmail;
-		String subject = "Order Placed at Ellison Electronics";
-		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Hey " + name + ",<br/><br/>"
-				+ "      We are glad that you shop with Ellison Electronics!" + "      <br/><br/>"
-				+ "      Your order has been placed successfully and under process to be shipped."
-				+ "<br/><h6>Please Note that this is a demo projet Email and you have not made any real transaction with us till now!</h6>"
-				+ "      <br/>" + "      Here is Your Transaction Details:<br/>" + "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Order Id:</font>"
+		String subject = "Đơn hàng đã đặt thành công tại Van Vu Electronics Store";
+		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Xin chào " + name + ",<br/><br/>"
+				+ "      Chúng tôi rất vui vì bạn đã mua sắm tại Van Vu Electronics Store!" + "      <br/><br/>"
+				+ "      Đơn hàng của bạn đã được đặt thành công và đang trong quá trình xử lý để vận chuyển."
+				+ "<br/><h6>Lưu ý: Đây là Email từ dự án thử nghiệm (demo project) và bạn chưa thực hiện bất kỳ giao dịch thực tế nào với chúng tôi!</h6>"
+				+ "      <br/>" + "      Dưới đây là chi tiết giao dịch của bạn:<br/>" + "      <br/>"
+				+ "      <font style=\"color:red;font-weight:bold;\">Mã đơn hàng:</font>"
 				+ "      <font style=\"color:green;font-weight:bold;\">" + transId + "</font><br/>" + "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Amount Paid:</font> <font style=\"color:green;font-weight:bold;\">"
-				+ transAmount + "</font>" + "      <br/><br/>" + "      Thanks for shopping with us!<br/><br/>"
-				+ "      Come Shop Again! <br/<br/> <font style=\"color:green;font-weight:bold;\">Ellison Electronics.</font>"
+				+ "      <font style=\"color:red;font-weight:bold;\">Số tiền đã thanh toán:</font> <font style=\"color:green;font-weight:bold;\">"
+				+ transAmount + " VNĐ</font>" + "      <br/><br/>" + "      Cảm ơn bạn đã mua sắm cùng chúng tôi!<br/><br/>"
+				+ "      Hẹn gặp lại bạn trong lần mua sắm tới! <br/<br/> <font style=\"color:green;font-weight:bold;\">Van Vu Electronics Store.</font>"
 				+ "    </p>" + "    " + "  </body>" + "</html>";
 
 		try {
@@ -49,17 +48,17 @@ public class MailMessage {
 
 	public static void orderShipped(String recipientEmail, String name, String transId, double transAmount) {
 		String recipient = recipientEmail;
-		String subject = "Hurray!!, Your Order has been Shipped from Ellison Electronics";
-		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Hey " + name + ",<br/><br/>"
-				+ "      We are glad that you shop with Ellison Electronics!" + "      <br/><br/>"
-				+ "      Your order has been shipped successfully and on the way to be delivered."
-				+ "<br/><h6>Please Note that this is a demo projet Email and you have not made any real transaction with us till now!</h6>"
-				+ "      <br/>" + "      Here is Your Transaction Details:<br/>" + "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Order Id:</font>"
+		String subject = "Tuyệt vời!! Đơn hàng của bạn đã được vận chuyển từ Van Vu Electronics Store";
+		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Xin chào " + name + ",<br/><br/>"
+				+ "      Chúng tôi rất vui vì bạn đã mua sắm tại Van Vu Electronics Store!" + "      <br/><br/>"
+				+ "      Đơn hàng của bạn đã được vận chuyển thành công và đang trên đường giao đến bạn."
+				+ "<br/><h6>Lưu ý: Đây là Email từ dự án thử nghiệm (demo project) và bạn chưa thực hiện bất kỳ giao dịch thực tế nào với chúng tôi!</h6>"
+				+ "      <br/>" + "      Dưới đây là chi tiết giao dịch của bạn:<br/>" + "      <br/>"
+				+ "      <font style=\"color:red;font-weight:bold;\">Mã đơn hàng:</font>"
 				+ "      <font style=\"color:green;font-weight:bold;\">" + transId + "</font><br/>" + "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Amount Paid:</font> <font style=\"color:green;font-weight:bold;\">"
-				+ transAmount + "</font>" + "      <br/><br/>" + "      Thanks for shopping with us!<br/><br/>"
-				+ "      Come Shop Again! <br/<br/> <font style=\"color:green;font-weight:bold;\">Ellison Electronics.</font>"
+				+ "      <font style=\"color:red;font-weight:bold;\">Số tiền đã thanh toán:</font> <font style=\"color:green;font-weight:bold;\">"
+				+ transAmount + " VNĐ</font>" + "      <br/><br/>" + "      Cảm ơn bạn đã mua sắm cùng chúng tôi!<br/><br/>"
+				+ "      Hẹn gặp lại bạn trong lần mua sắm tới! <br/<br/> <font style=\"color:green;font-weight:bold;\">Van Vu Electronics Store.</font>"
 				+ "    </p>" + "    " + "  </body>" + "</html>";
 
 		try {
@@ -71,22 +70,21 @@ public class MailMessage {
 
 	public static void productAvailableNow(String recipientEmail, String name, String prodName, String prodId) {
 		String recipient = recipientEmail;
-		String subject = "Product " + prodName + " is Now Available at Ellison Electronics";
-		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Hey " + name + ",<br/><br/>"
-				+ "      We are glad that you shop with Ellison Electronics!" + "      <br/><br/>"
-				+ "      As per your recent browsing history, we seen that you were searching for an item that was not available in sufficient amount"
-				+ " at that time. <br/><br/>"
-				+ "We are glad to say that the product named <font style=\"color:green;font-weight:bold;\">" + prodName
-				+ "</font> with " + "product Id <font style=\"color:green;font-weight:bold;\">" + prodId
-				+ "</font> is now available to shop in our store!"
-				+ "<br/><h6>Please Note that this is a demo projet Email and you have not made any real transaction with us and not ordered anything till now!</h6>"
-				+ "      <br/>" + "      Here is The product detail which is now available to shop:<br/>"
+		String subject = "Sản phẩm " + prodName + " hiện đã có hàng tại Van Vu Electronics Store";
+		String htmlTextMessage = "<html>" + "  <body>" + "    <p>" + "      Xin chào " + name + ",<br/><br/>"
+				+ "      Chúng tôi rất vui vì bạn đã quan tâm đến Van Vu Electronics Store!" + "      <br/><br/>"
+				+ "      Dựa trên lịch sử xem hàng gần đây, chúng tôi thấy bạn từng tìm kiếm một sản phẩm tạm thời hết hàng vào thời điểm đó. <br/><br/>"
+				+ "      Chúng tôi rất vui mừng thông báo rằng sản phẩm có tên <font style=\"color:green;font-weight:bold;\">" + prodName
+				+ "</font> với " + "mã sản phẩm <font style=\"color:green;font-weight:bold;\">" + prodId
+				+ "</font> hiện đã được bổ sung đầy đủ và sẵn sàng để bạn mua sắm tại cửa hàng!"
+				+ "<br/><h6>Lưu ý: Đây là Email từ dự án thử nghiệm (demo project), bạn chưa thực hiện giao dịch thực tế và chưa đặt mua sản phẩm này!</h6>"
+				+ "      <br/>" + "      Dưới đây là thông tin chi tiết sản phẩm vừa có hàng:<br/>"
 				+ "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Product Id: </font><font style=\"color:green;font-weight:bold;\">"
+				+ "      <font style=\"color:red;font-weight:bold;\">Mã sản phẩm: </font><font style=\"color:green;font-weight:bold;\">"
 				+ prodId + " " + "      </font><br/>" + "      <br/>"
-				+ "      <font style=\"color:red;font-weight:bold;\">Product Name: </font> <font style=\"color:green;font-weight:bold;\">"
-				+ prodName + "</font>" + "      <br/><br/>" + "      Thanks for shopping with us!<br/><br/>"
-				+ "      Come Shop Again! <br/<br/><br/> <font style=\"color:green;font-weight:bold;\">Ellison Electronics.</font>"
+				+ "      <font style=\"color:red;font-weight:bold;\">Tên sản phẩm: </font> <font style=\"color:green;font-weight:bold;\">"
+				+ prodName + "</font>" + "      <br/><br/>" + "      Cảm ơn bạn đã mua sắm cùng chúng tôi!<br/><br/>"
+				+ "      Hẹn gặp lại bạn! <br/<br/><br/> <font style=\"color:green;font-weight:bold;\">Van Vu Electronics Store.</font>"
 				+ "    </p>" + "    " + "  </body>" + "</html>";
 
 		try {

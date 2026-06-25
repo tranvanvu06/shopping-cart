@@ -116,7 +116,8 @@ public class JavaMailUtil {
 			message.setFrom(new InternetAddress(myAccountEmail));
 			message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
 			message.setSubject(subject);
-			message.setContent(htmlTextMessage, "text/html");
+			// Đảm bảo có đuôi ; charset=UTF-8 ở phần định dạng text/html
+			message.setContent(htmlTextMessage, "text/html; charset=UTF-8");
 			return message;
 
 		} catch (Exception exception) {
