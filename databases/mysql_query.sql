@@ -15,7 +15,7 @@ CREATE SCHEMA IF NOT EXISTS `shopping-cart` DEFAULT CHARACTER SET utf8mb4 COLLAT
 USE `shopping-cart` ;
 
 -- -----------------------------------------------------
--- Table `shopping-cart`.`product`
+-- Table `shopping-cart`.`product` bang product
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `shopping-cart`.`product` ;
 
